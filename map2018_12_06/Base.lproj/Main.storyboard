@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,53 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="map2018_12_06" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="XK8-cB-kc2">
+                                <rect key="frame" x="0.0" y="20" width="375" height="30"/>
+                                <nil key="textColor"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                            </textField>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="u4V-Rm-8aZ">
+                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQu-uc-gTZ">
+                                <rect key="frame" x="313" y="617" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Xiy-KI-oia"/>
+                                    <constraint firstAttribute="width" constant="46" id="aAQ-nP-lVX"/>
+                                </constraints>
+                                <state key="normal" title="切替"/>
+                                <connections>
+                                    <action selector="tapchangeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IqG-8c-825"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="XK8-cB-kc2" secondAttribute="trailing" id="5L8-b5-0g4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TQu-uc-gTZ" secondAttribute="bottom" constant="20" id="BG0-fZ-YRt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TQu-uc-gTZ" secondAttribute="trailing" constant="16" id="DtD-wf-9bq"/>
+                            <constraint firstItem="u4V-Rm-8aZ" firstAttribute="top" secondItem="XK8-cB-kc2" secondAttribute="bottom" id="X6X-mw-0eH"/>
+                            <constraint firstAttribute="trailing" secondItem="u4V-Rm-8aZ" secondAttribute="trailing" id="acZ-Dh-lN1"/>
+                            <constraint firstItem="XK8-cB-kc2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bBO-gy-tAs"/>
+                            <constraint firstItem="u4V-Rm-8aZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="f3B-vN-Xmv"/>
+                            <constraint firstItem="XK8-cB-kc2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lYT-pF-e5d"/>
+                            <constraint firstItem="u4V-Rm-8aZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tkb-4T-LrF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="map" destination="u4V-Rm-8aZ" id="EYM-7V-ucD"/>
+                        <outlet property="textfield" destination="XK8-cB-kc2" id="WU2-Bv-CT4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
